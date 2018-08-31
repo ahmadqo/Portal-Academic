@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/website/css/style_jurnal.css"/>        
+        <title>Selamat Datang Di Portal Al-Munawwir</title>
+        <link rel="icon" type="image/png" href="/website/img/logo.jpg">
+
+    </head>
+    <body>
+        <div id="header">
+            <h3>AL MUNAWWIR</h3>
+            <h4>Krapyak Yogyakarta</h4>
+            <div class="logout">
+                <a href="/logout">Log Out</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-atas">
+                <div class="col-2"bac>
+                    <div class="logo">
+                        <img src="/website/img/logo.jpg" alt="Logo PP Al-Munawwir">
+                    </div>
+                    <div class="menu-kiri">
+                        <ul id="menukiri">
+                            <li><a href="/santri/index">Data Santri</a></li>
+                            <li><a href="/nilai/index">Data Nilai</a></li>
+                            <li><a href="/kajian">Jadwal Kajian</a></li>
+                            <li><a href="/kegiatan/santri">Jadwal Kegiatan</a></li>
+                            <li><a href="/jurnal/index">Data Jurnal</a></li>
+                            <li><a href="/logon/ubahpwadmin">Ubah Password</a></li>
+                        </ul>
+                    </div>                    
+                </div>
+                <div class="col-10">
+                    <div class="row" id="submenu">
+                        <!-- <input type="button" value="Upload Jurnal" onclick="window.location.href='/jurnal/action/upload'"> -->
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content" style="overflow-x:auto;">
+                                <div class="conten-input">
+                                    <h2>UPLOAD JURNAL</h2>
+                                    <form enctype="multipart/form-data" action="/jurnal/action/upload" method="POST">
+                                        <label for="judul"><b>Judul Jurnal</b></label>
+                                        <input type="text" name="filename" placeholder="Masukkan Nama File Jurnal.." required><br>
+        
+                                        <input type="hidden" name="type" value="application/pdf">
+
+                                        <label for="uploadFile"><b>Pilih File</b></label>
+                                        <input type="file" name="uploadFile" required><br>
+        
+                                        <input type="submit" value="Simpan">
+                                        <input type="reset" value="Reset">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer">
+                <p>Copyright &copy; 2018</p>
+                <p>Designed By Ahmad Qomaruddin</p>  
+            </div>
+        </div>
+    </body>    
+</html>

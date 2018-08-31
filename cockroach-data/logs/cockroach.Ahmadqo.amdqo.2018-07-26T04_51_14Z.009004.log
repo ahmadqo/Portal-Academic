@@ -1,0 +1,33 @@
+I180726 04:51:14.158185 1 util/log/clog.go:992  [config] file created at: 2018/07/26 04:51:14
+I180726 04:51:14.158185 1 util/log/clog.go:992  [config] running on machine: Ahmadqo
+I180726 04:51:14.158185 1 util/log/clog.go:992  [config] binary: CockroachDB CCL v1.1.1 (linux amd64, built 2017/10/19 15:31:46, go1.8.3)
+I180726 04:51:14.158185 1 util/log/clog.go:992  [config] arguments: [cockroach start --insecure]
+I180726 04:51:14.158185 1 util/log/clog.go:992  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+W180726 04:51:14.158183 1 cli/start.go:777  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access <all your IP addresses>.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/stable/secure-a-cluster.html
+I180726 04:51:14.158998 1 server/config.go:312  available memory from cgroups (8.0 EiB) exceeds system memory 7.6 GiB, using system memory
+W180726 04:51:14.159043 1 cli/start.go:697  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=25% (1.9 GiB).
+I180726 04:51:14.159145 1 cli/start.go:785  CockroachDB CCL v1.1.1 (linux amd64, built 2017/10/19 15:31:46, go1.8.3)
+I180726 04:51:14.260323 1 server/config.go:312  available memory from cgroups (8.0 EiB) exceeds system memory 7.6 GiB, using system memory
+I180726 04:51:14.260417 1 server/config.go:425  system total memory: 7.6 GiB
+I180726 04:51:14.260604 1 server/config.go:427  server configuration:
+max offset                500000000
+cache size                128 MiB
+SQL memory pool size      128 MiB
+scan interval             10m0s
+scan max idle time        200ms
+metrics sample interval   10s
+event log enabled         true
+linearizable              false
+I180726 04:51:14.260975 14 cli/start.go:503  starting cockroach node
+I180726 04:51:14.263806 14 storage/engine/rocksdb.go:411  opening rocksdb instance at "/home/amdqo/go/src/github.com/ahmadqo/SP_FrontEnd/cockroach-data/local"
+E180726 04:51:14.691813 1 cli/error.go:68  cockroach server exited with error: consider changing the port via --port: listen tcp :26257: bind: address already in use
+Error: cockroach server exited with error: consider changing the port via --port: listen tcp :26257: bind: address already in use

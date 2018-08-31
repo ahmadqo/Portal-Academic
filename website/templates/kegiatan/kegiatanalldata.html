@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/website/css/style_kegiatan.css"/>        
+        <title>Selamat Datang Di Portal Al-Munawwir</title>
+        <link rel="icon" type="image/png" href="/website/img/logo.jpg">
+
+    </head>
+    <body>
+        <div id="header">
+            <h3>AL MUNAWWIR</h3>
+            <h4>Krapyak Yogyakarta</h4>
+            <div class="logout">
+                <a href="/logout">Log Out</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-atas">
+                <div class="col-2"bac>
+                    <div class="logo">
+                        <img src="/website/img/logo.jpg" alt="Logo PP Al-Munawwir">
+                    </div>
+                    <div class="menu-kiri">
+                        <ul id="menukiri">
+                            <li><a href="/santri/index">Data Santri</a></li>
+                            <li><a href="/nilai/index">Data Nilai</a></li>
+                            <li><a href="/kajian">Jadwal Kajian</a></li>
+                            <li><a href="/kegiatan/santri">Jadwal Kegiatan</a></li>
+                            <li><a href="/jurnal/index">Data Jurnal</a></li>
+                            <li><a href="/logon/ubahpwadmin">Ubah Password</a></li>
+                        </ul>
+                    </div>                    
+                </div>
+                <div class="col-10">
+                    <div class="row" id="submenu">
+                        <input type="button" value="Kegiatan Harian" onclick="window.location.href='/kegiatan/santri/harian'">
+                        <input type="button" value="Kegiatan Penunjang" onclick="window.location.href='/kegiatan/santri/dataJadwal'">
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content" style="overflow-x:auto;">
+                                <div class="content-menu">
+                                    <form action="/kegiatan/santri/dataByid/get">
+                                        <input type="button" value="Tambah Kegiatan" onclick="window.location.href='/kegiatan/santri/data/insertKegiatan'">
+                                        <input type="text" id="byid" name="id" placeholder="Id Kegiatan.." required>
+                                        <input type="submit" value="Cari">
+                                    </form>
+                                </div>
+                                <h2>DAFTAR JADWAL KEGIATAN SANTRI PONDOK</h2>
+                                <h3>PP. Al-Munawwir Krapyak</h3>
+                                <table>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nama Kegiatan</th>
+                                        <th width="100px">Tanggal</th>
+                                        <th width="130px">Waktu</th>
+                                        <th>Lokasi</th>
+                                        <th>Pengampu/PJ</th>
+                                        <th>Keterangan</th>
+                                    </tr>
+                                    {{ range .}}
+                                    <tr>
+                                        <td>{{ .ID}}</td>
+                                        <td>{{ .NamaKegiatan}}</td>
+                                        <td>{{ .TanggalPelaksanaan}}</td>
+                                        <td>{{ .WaktuPelaksanaan}}</td>
+                                        <td>{{ .LokasiKegiatan}}</td>
+                                        <td>{{ .PengampuKegiatan}}</td>
+                                        <td>{{ .Keterangan}}</td>
+                                    </tr>
+                                    {{ end }}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer">
+                <p>Copyright &copy; 2018</p>
+                <p>Designed By Ahmad Qomaruddin</p>    
+            </div>
+        </div>
+    </body>    
+</html>

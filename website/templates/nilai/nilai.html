@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/website/css/style_nilai.css">        
+        <title>Selamat Datang Di Portal Al-Munawwir</title>
+        <link rel="icon" type="image/png" href="/website/img/logo.jpg">
+
+    </head>
+    <body>
+        <div id="header">
+            <h3>AL MUNAWWIR</h3>
+            <h4>Krapyak Yogyakarta</h4>
+            <div class="logout">
+                <a href="/logout">Log Out</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-atas">
+                <div class="col-2"bac>
+                    <div class="logo">
+                        <img src="/website/img/logo.jpg" alt="Logo PP Al-Munawwir">
+                    </div>
+                    <div class="menu-kiri">
+                        <ul id="menukiri">
+                            <li><a href="/santri/index">Data Santri</a></li>
+                            <li><a href="/nilai/index">Data Nilai</a></li>
+                            <li><a href="/kajian">Jadwal Kajian</a></li>
+                            <li><a href="/kegiatan/santri">Jadwal Kegiatan</a></li>
+                            <li><a href="/jurnal/index">Data Jurnal</a></li>
+                            <li><a href="/logon/ubahpwadmin">Ubah Password</a></li>
+                        </ul>
+                    </div>                    
+                </div>
+                <div class="col-10">
+                    <div class="row" id="submenu">
+                        <form action="/nilai/tampil/transkipsantri" method="POST">
+                            <!-- <input type="button" value="Data Santri" onclick="window.location.href='/santri/dataAll-daftar'"> -->
+                            <input type="button" value="Input Nilai" onclick="window.location.href='/nilai/inputData-nilai'">
+                            <input type="text" id="byid" name="nis" placeholder="Nomor Induk Santri.." required>
+                            <input type="submit" value="Cari">
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content" style="overflow-x:auto;">
+                                <h2>Daftar Mata Pelajaran Program Diniyah</h2>
+                                <h3>Pondok Pesantren Al-Munawwir Krapyak</h3>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <ol>
+                                                <li>Do'a</li>
+                                                <li>Nahwu Terjemah</li>
+                                                <li>Shorrof (Amtsilah At-tashrifiyah)</li>
+                                                <li>'Aqidatul 'Awwam</li>
+                                                <li>Alala</li>
+                                                <li>Juz 'Amma (Tajwid)</li>
+                                                <li>Fiqih(Sholat)</li>
+                                                <li>Aqoid(Tauhid)</li>
+                                                <li>Khot(Latihan Menulis)</li>
+                                                <li>Jurumiyah</li>
+                                                <li>Hidayatul Mustafid</li>
+                                                <li>Amtsilah At-tashrifiyah</li>
+                                                <li>Al-Jurumiyah</li>
+                                                <li>Qiroatul Kitab</li>
+                                                <li>Kailani</li>
+                                                <li>Taqrib</li>
+                                            </ol>
+                                        </td>
+                                        <td>
+                                            <ol start="17">
+                                                <li>Arba’in An-Nawawi</li>
+                                                <li>Durusu Al-Aqoid(juz 2)</li>
+                                                <li>Al-Kawakub Ad-Durriyah</li>
+                                                <li>Al-Maqsud</li>
+                                                <li>Faroid</li>
+                                                <li>Bulughul Marom</li>
+                                                <li>Kepondokan</li>
+                                                <li>Durusu Al-Aqoid(juz 3)</li>
+                                                <li>Al-Waroqoh</li>
+                                                <li>Fathu Al-Qorib</li>
+                                                <li>Bulugu Al-Marom</li>
+                                                <li>Mushthalahatul Hadits (Al-Manhalu Al-Lathif)</li>
+                                                <li>Tafsir Jalalain</li>
+                                                <li>Nahwu (Alfiah)</li>
+                                                <li>Fiqih (Fathul Mu'in)</li>
+                                            </ol>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer">
+                <p>Copyright &copy; 2018</p>
+                <p>Designed By Ahmad Qomaruddin</p>  
+            </div>
+        </div>
+    </body>    
+</html>

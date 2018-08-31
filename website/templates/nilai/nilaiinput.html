@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/website/css/style_nilai.css"/>        
+        <title>Selamat Datang Di Portal Al-Munawwir</title>
+        <link rel="icon" type="image/png" href="/website/img/logo.jpg">
+
+    </head>
+    <body>
+        <div id="header">
+            <h3>AL MUNAWWIR</h3>
+            <h4>Krapyak Yogyakarta</h4>
+            <div class="logout">
+                <a href="/logout">Log Out</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-atas">
+                <div class="col-2"bac>
+                    <div class="logo">
+                        <img src="/website/img/logo.jpg" alt="Logo PP Al-Munawwir">
+                    </div>
+                    <div class="menu-kiri">
+                        <ul id="menukiri">
+                            <li><a href="/santri/index">Data Santri</a></li>
+                            <li><a href="/nilai/index">Data Nilai</a></li>
+                            <li><a href="/kajian">Jadwal Kajian</a></li>
+                            <li><a href="/kegiatan/santri">Jadwal Kegiatan</a></li>
+                            <li><a href="/jurnal/index">Data Jurnal</a></li>
+                            <li><a href="/logon/ubahpwadmin">Ubah Password</a></li>
+                        </ul>
+                    </div>                    
+                </div>
+                <div class="col-10">
+                    <div class="row" id="submenu">
+                        <form action="/nilai/tampil/transkipsantri" method="POST">
+                            <!-- <input type="button" value="Data Santri" onclick="window.location.href='/santri/dataAll-daftar'"> -->
+                            <input type="button" value="Input Nilai" onclick="window.location.href='/nilai/inputData-nilai'">
+                            <input type="text" id="byid" name="nis" placeholder="Nomor Induk Santri.." required>
+                            <input type="submit" value="Cari">
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content" style="overflow-x:auto;">
+                                <div class="conten-input">
+                                    <h2>INPUT NILAI SANTRI</h2>
+                                    <h3>PP. Al-Munawwir Krapyak</h3>
+                                    <form action="/nilai/inputData-nilai" method="POST">  
+                                        <label for="nis"><b>NIS</b></label>
+                                        <input type="text" name="nis" placeholder="Nomor Induk Santri.." required><br>
+    
+                                        <label for="kodepelajaran"><b>Mata Pelajaran</b></label>
+                                        <select name="kodepelajaran" class="pelajaran-select">
+                                            <option selected>--Pilih Mata Pelajaran--</option>
+                                            <option value="MU001">1. Do'a</option>
+                                            <option value="MU002">2. Nahwu Terjemah</option>
+                                            <option value="MU003">3. Shorrof (Amtsilah At-tashrifiyah)</option>
+                                            <option value="MU004">4. 'Aqidatul 'Awwam/option>
+                                            <option value="MU005">5. Alala</option>
+                                            <option value="MU006">6. Juz 'Amma (Tajwid)</option>
+                                            <option value="MU007">7. Fiqih(Sholat)</option>
+                                            <option value="MU008">8. Aqoid(Tauhid)</option>
+                                            <option value="MU009">9. Khot(Latihan Menulis)</option>
+                                            <option value="MU010">10. Jurumiyah</option>
+                                            <option value="MU011">11. Hidayatul Mustafid</option>
+                                            <option value="MU012">12. Amtsilah At-tashrifiyah</option>
+                                            <option value="MU013">13. Al-Jurumiyah</option>
+                                            <option value="MU014">14. Qiroatul Kitab</option>
+                                            <option value="MU015">15. Kailani</option>
+                                            <option value="MU016">16. Taqrib</option>
+                                            <option value="MU017">17. Arba’in An-Nawawi</option>
+                                            <option value="MU018">18. Durusu Al-Aqoid(juz 2)</option>
+                                            <option value="MU019">19. Al-Kawakub Ad-Durriyah</option>
+                                            <option value="MU020">20. Al-Maqsud</option>
+                                            <option value="MU021">21. Faroid</option>
+                                            <option value="MU022">22. Bulughul Marom</option>
+                                            <option value="MU023">23. Kepondokan</option>
+                                            <option value="MU024">24. Durusu Al-Aqoid(juz 3)</option>
+                                            <option value="MU025">25. Al-Waroqoh</option>
+                                            <option value="MU026">26. Fathu Al-Qorib</option>
+                                            <option value="MU027">27. Bulugu Al-Marom</option>
+                                            <option value="MU028">28. Mushthalahatul Hadits (Al-Manhalu Al-Lathif)</option>
+                                            <option value="MU029">29. Tafsir Jalalain</option>
+                                            <option value="MU030">30. Nahwu (Alfiah)</option>
+                                            <option value="MU031">31. Fiqih (Fathul Mu'in)</option>
+                                        </select><br>
+                                        
+                                        <label for="nilai"><b>Nilai (10-100)</b></label>
+                                        <input type="text" name="nilai" id="nilai" placeholder="Nilai.." required><br>
+                                                        
+                                        <input type="submit" value="Simpan">
+                                        <input type="reset" value="Reset">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer">
+                <p>Copyright &copy; 2018</p>
+                <p>Designed By Ahmad Qomaruddin</p>    
+            </div>
+        </div>
+    </body>    
+</html>

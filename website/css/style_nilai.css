@@ -1,0 +1,393 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+html {
+    font-family: "Lucida Sans", sans-serif;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+/* MENU KIRI========================================== */
+.col-2 {
+    background-color: #1E90FF;
+    /* height: 630px; */
+    min-height: 650px;
+    position: relative;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .col-2 {
+        background-color: #1E90FF;
+        height: 100%;
+    }
+}
+
+.row-atas{
+    padding-top: 70px;
+}
+#header{
+    width:100%;
+    background:#00008B;
+    position:fixed; 
+    height:70px;
+	margin-left:auto;
+	margin-right:auto;
+    z-index:9999; /*supaya header selalu muncul di atas seluruh elemen*/
+}
+#header h3{
+    font-family: Fantasy; 
+    color: #ffffff;
+    float: left;
+}
+#header h4{
+    font-family: Fantasy; 
+    color: #ffffff;
+}
+.logo{
+    text-align: center; 
+}
+.logo img{
+    width: 50%;
+    height: 50%;   
+    margin-top: 30%;
+}
+#menukiri{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 10%;
+}
+#menukiri li {
+    /* font-family: "Lucida Sans", sans-serif; */
+    text-align: center;
+    list-style: none;
+    padding: 0.5em;
+    width: 100%;
+}
+#menukiri li:hover{
+    background: linear-gradient(-45deg, #ffffff, #ffffff);
+    border-radius: 4px;
+}
+#menukiri li a {
+    color: white;
+    /* font-family: "Lucida Sans", sans-serif; */
+    display: block;
+    text-decoration: none;
+    /* font-size: 100%; */
+    text-align: center;
+}
+#menukiri li a:hover{
+    color: #FFA500;
+}
+/* =================================================== */
+
+
+/* COL 10 KONTEN ===============*/
+.col-10{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+/* ============================== */
+
+
+/* SUB MENU ======================================== */
+#submenu {
+    background-color: #D3D3D3;
+}
+#submenu input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#submenu input[type=submit] {
+    width: 70px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submenu input[type=submit]:hover {
+    background-color: white;
+    color: black;
+}
+#submenu input[type=button] {
+    background-color: #00BFFF;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    align-content: center;    
+    cursor: pointer;
+    border-radius:8px; 
+    color: white;
+    width: 160px;
+    margin: 10px;
+}
+#submenu input[type=button]:hover {
+    background-color: white;
+    color: black;
+}
+/* ================================================= */
+
+/* CONTENT ====================== */
+.content table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.content th, td{
+    text-align: left;
+    padding: 8px;
+}
+.content th{
+    background-color: #3CB371;
+    color: white;
+}
+/* ==================== */
+.content-table{
+    display: grid;
+    background-color: #DCDCDC;
+    padding: 20px;
+}
+.content-table table{
+    background-color: white;
+}
+.content-table th,td{
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+/* ===================== */
+.content h2, h3 {
+    /* padding: 0 0; */
+    margin: 10px;
+    text-align: center;
+}
+.content h3{
+    padding-bottom: 20px;
+}
+.content tr:nth-child(even){background-color: #f2f2f2}
+.conten-input input[type=button] {
+    align-content: center;    
+    color: black; 
+    font-size: 14px;
+    width: 80px;
+    padding: 5px 5px;
+    margin: 0;
+    border: none;
+    border-radius:5px; 
+    cursor: pointer;
+    height: 30px;
+}
+
+.conten-input input[type=button]:hover {
+    background-color: white;
+    color: black;
+}
+.conten-input h2, h3 {
+    /* padding: 0 0; */
+    margin: 10px;
+    text-align: center;
+}
+.conten-input h3{
+    padding-bottom: 20px;
+}
+
+.content #update {
+    background-color: #FFD700;
+    font-size: 14px;
+    width: 80px;
+    color: white;
+    padding: 5px 5px;
+    margin: 0;
+    border: none;
+    border-radius:5px; 
+    cursor: pointer;
+    height: 30px;
+}
+.content #hapus {
+    background-color: #FF4500;
+    font-size: 14px;
+    width: 80px;
+    color: white;
+    padding: 5px 5px;
+    margin:0;
+    border: none;
+    border-radius:5px; 
+    cursor: pointer;
+    height: 30px;
+}
+.content #update:hover{
+    background-color: white;
+    color: black;
+}
+.content #hapus:hover{
+    background-color: white;
+    color: black;
+}
+.conten-input #cancel {
+    background-color: #FF6347;
+}
+.conten-input #cancel:hover {
+    background-color: white;
+    color: black;
+}
+/* INPU CONTEN ============*/
+.conten-input{
+    display: grid;
+    background-color: #DCDCDC;
+    padding: 20px;
+}
+.content input[type=text] {
+    width: 40%;
+    padding: 10px 10px;
+    margin: 5px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* float: left; */
+}
+.content #id{
+    width: 20%;
+    margin: 0;
+}
+.content input[type=date] {
+    width: 20%;
+    padding: 8px 20px;
+    margin: 5px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.pelajaran-select{
+    width: 30%;
+    padding: 8px 20px;
+    margin: 5px 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: white;
+}
+#nilai {
+    width: 10%;
+}
+.content input[type=submit] {
+    width: 80px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 5px;
+    margin: 8px 0;
+    border: none;
+    font-size: 14px;
+    border-radius:5px; 
+    cursor: pointer;
+    height: 30px;
+}
+
+.content input[type=submit]:hover {
+    background-color: white;
+    color: black;
+}
+.content input[type=reset] {
+    width: 80px;
+    background-color: #FFA500;
+    padding: 5px 5px;
+    margin: 8px 0;
+    border: none;
+    font-size: 14px;
+    border-radius:5px; 
+    cursor: pointer;
+    height: 30px;
+    color: white;
+}
+
+.content input[type=reset]:hover {
+    background-color: white;
+    color: black;
+}
+
+.content form label { 
+    float:left; 
+    width:200px;
+    margin-top: 15px;
+    font-size: 15px;
+}
+.content form br { clear:left;}
+/* ============= */
+.paragrap-1 {
+    text-indent: 5%;
+    text-align: justify;
+}
+.content #content-img img{
+    width: 100%;
+    height: 100%;
+}
+/* ============================== */
+
+
+/*FOOTER =============================================*/
+.footer {
+    width: 100%;
+    background-color:#2E8B57;
+    /* padding: 2px; */
+    text-align: center;
+    color: #ffffff;
+    height: 70px;
+    position: relative; 
+}
+.footer p{
+    margin: 0;
+    padding-top: 10px;
+}
+/* ==================================================== */
+.logout a{
+    float: right;
+    margin-right: 20px;
+    position: relative;
+    bottom: 30px;
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+.logout a:hover{
+    color: orange;
+}

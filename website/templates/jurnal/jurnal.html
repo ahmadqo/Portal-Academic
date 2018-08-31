@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/website/css/style_jurnal.css"/>        
+        <title>Selamat Datang Di Portal Al-Munawwir</title>
+        <link rel="icon" type="image/png" href="/website/img/logo.jpg">
+
+    </head>
+    <body>
+        <div id="header">
+            <h3>AL MUNAWWIR</h3>
+            <h4>Krapyak Yogyakarta</h4>
+            <div class="logout">
+                <a href="/logout">Log Out</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-atas">
+                <div class="col-2"bac>
+                    <div class="logo">
+                        <img src="/website/img/logo.jpg" alt="Logo PP Al-Munawwir">
+                    </div>
+                    <div class="menu-kiri">
+                        <ul id="menukiri">
+                            <li><a href="/santri/index">Data Santri</a></li>
+                            <li><a href="/nilai/index">Data Nilai</a></li>
+                            <li><a href="/kajian">Jadwal Kajian</a></li>
+                            <li><a href="/kegiatan/santri">Jadwal Kegiatan</a></li>
+                            <li><a href="/jurnal/index">Data Jurnal</a></li>
+                            <li><a href="/logon/ubahpwadmin">Ubah Password</a></li>
+                        </ul>
+                    </div>                    
+                </div>
+                <div class="col-10">
+                    <div class="row" id="submenu">
+                        <input type="button" value="Upload Jurnal" onclick="window.location.href='/jurnal/action/upload'">
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content" style="overflow-x:auto;">
+                                <h2>Jurnal-Jurnal Pondok Pesantren Al-Munawwir Krapyak</h2>
+                                <table id="table-jurnal" align="center">
+                                    <tr>
+                                        <th>Jurnal</th>
+                                        <th>Download</th>
+                                        <th>Hapus</th>
+                                    </tr>
+                                    {{ range .}}
+                                    <tr>
+                                        <td>{{ .Namafile}}</td>
+                                        <td>
+                                            <a target="_blank" href="/jurnal/files/{{ .Namafile}}">Download</a>
+                                        </td>
+                                        <td>
+                                            <form action="/jurnal/delete">
+                                                <input type="hidden" id="id"  name="kodejur" value="{{ .Kode}}">
+                                                <input type="hidden" id="id"  name="namafile" value="{{ .Namafile}}">
+                                                <input type="submit" id="hapus" value="Delete" href="/jurnal/delete" onclick="return konfirmasi()">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    {{ end }}
+                                </table>
+                                <script type="text/javascript" language="javascript">
+                                    function konfirmasi(){
+                                        tanya = confirm("Anda yakin akan menghapus data?");
+                                        if (tanya == true) return true;
+                                        else return false;
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer">
+                <p>Copyright &copy; 2018</p>
+                <p>Designed By Ahmad Qomaruddin</p>  
+            </div>
+        </div>
+    </body>    
+</html>

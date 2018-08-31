@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/website/css/style_santri.css"/>        
+        <title>Selamat Datang Di Portal Al-Munawwir</title>
+        <link rel="icon" type="image/png" href="/website/img/logo.jpg">
+
+    </head>
+    <body>
+        <div id="header">
+            <h3>AL MUNAWWIR</h3>
+            <h4>Krapyak Yogyakarta</h4>
+            <div class="logout">
+                <a href="/logout">Log Out</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-atas">
+                <div class="col-2"bac>
+                    <div class="logo">
+                        <img src="/website/img/logo.jpg" alt="Logo PP Al-Munawwir">
+                    </div>
+                    <div class="menu-kiri">
+                        <ul id="menukiri">
+                            <li><a href="/santri/index">Data Santri</a></li>
+                            <li><a href="/nilai/index">Data Nilai</a></li>
+                            <li><a href="/kajian">Jadwal Kajian</a></li>
+                            <li><a href="/kegiatan/santri">Jadwal Kegiatan</a></li>
+                            <li><a href="/jurnal/index">Data Jurnal</a></li>
+                            <li><a href="/logon/ubahpwadmin">Ubah Password</a></li>
+                        </ul>
+                    </div>                    
+                </div>
+                <div class="col-10">
+                    <div class="row" id="submenu">
+                        <form action="/santri/data/getSantri-Nis" method="POST">
+                            <input type="button" value="Data Santri" onclick="window.location.href='/santri/dataAll-daftar'">
+                            <input type="button" value="Tambah Data Santri" onclick="window.location.href='/santri/dataInsert-handle'">
+                            <input type="text" id="byid" name="nis" placeholder="Nomor Induk Santri.." required>
+                            <input type="submit" value="Cari">
+                        </form>
+                        <form action="/santri/data/komplek" method="POST">
+                            <select name="komplek"  class="select-komplek">
+                                <option selected>--Pilih Komplek--</option>
+                                <option value="110">Komplek AB</option>
+                                <option value="701">Komplek Gipa</option>
+                                <option value="081">Huffadz 1</option>
+                                <option value="082">Huffadz 2</option>
+                                <option value="901">Komplek IJ</option>
+                                <option value="012">Komplek L Putra</option>
+                                <option value="013">Komplek L Putri</option>
+                                <option value="015">Komplek M</option>
+                                <option value="231">Nurussalam Putra</option>
+                                <option value="232">Nurussalam Putri</option>
+                                <option value="601">Padang Jagad</option>
+                                <option value="005">Komplek Q</option>
+                                <option value="061">Komplek R1</option>
+                                <option value="062">Komplek R2</option>
+                                <option value="056">Ribatul Qur'an</option>
+                            </select>
+                            <input type="submit" value="Cari">
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content" style="overflow-x:auto;">
+                                <h2>DAFTAR SANTRI PONDOK</h2>
+                                <h3>PP. Al-Munawwir Krapyak</h3>
+                                <table align="center">
+                                    <tr>
+                                        <th>NIS</th>
+                                        <th>Nama Santri</th>
+                                        <th>JK</th>
+                                        <th>Komplek</th>
+                                        <!-- <th>Alamat</th> -->
+                                    </tr>
+                                    {{ range .}}
+                                    <tr>
+                                        <td>{{ .Nis}}</td>
+                                        <td>{{ .Nama}}</td>
+                                        <td>{{ .JenisKelamin}}</td>
+                                        <td>{{ .Komplek}}</td>
+                                        <!-- <td>{{ .Alamat}}</td> -->
+                                    </tr>
+                                    {{ end }}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer">
+                <p>Copyright &copy; 2018</p>
+                <p>Designed By Ahmad Qomaruddin</p>    
+            </div>
+        </div>
+    </body>    
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/website/css/style_nilai.css"/>        
+        <title>Selamat Datang Di Portal Al-Munawwir</title>
+        <link rel="icon" type="image/png" href="/website/img/logo.jpg">
+
+    </head>
+    <body>
+        <div id="header">
+            <h3>AL MUNAWWIR</h3>
+            <h4>Krapyak Yogyakarta</h4>
+            <div class="logout">
+                <a href="/logout">Log Out</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-atas">
+                <div class="col-2"bac>
+                    <div class="logo">
+                        <img src="/website/img/logo.jpg" alt="Logo PP Al-Munawwir">
+                    </div>
+                    <div class="menu-kiri">
+                        <ul id="menukiri">
+                            <li><a href="/santri/index">Data Santri</a></li>
+                            <li><a href="/nilai/index">Data Nilai</a></li>
+                            <li><a href="/kajian">Jadwal Kajian</a></li>
+                            <li><a href="/kegiatan/santri">Jadwal Kegiatan</a></li>
+                            <li><a href="/jurnal/index">Data Jurnal</a></li>
+                            <li><a href="/logon/ubahpwadmin">Ubah Password</a></li>
+                        </ul>
+                    </div>                    
+                </div>
+                <div class="col-10">
+                    <div class="row" id="submenu">
+                        <form action="/nilai/tampil/transkipsantri" method="POST">
+                            <!-- <input type="button" value="Data Santri" onclick="window.location.href='/santri/dataAll-daftar'"> -->
+                            <input type="button" value="Input Nilai" onclick="window.location.href='/nilai/inputData-nilai'">
+                            <input type="text" id="byid" name="nis" placeholder="Nomor Induk Santri.." required>
+                            <input type="submit" value="Cari">
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content" style="overflow-x:auto;">
+                                <h2>TRANSKIP NILAI SANTRI</h2>  
+                                <h3>PP. Al-Munawwir Krapyak</h3>
+                                <!-- <h4>Nis : </h4>
+                                <h4>Nama : </h4> -->
+                                <table>
+                                    <tr>
+                                        <th>Kode</th>
+                                        <th>Mata Pelajaran</th>
+                                        <th>Nilai</th>
+                                        <th>Update</th>
+                                        <th>Hapus</th>
+                                    </tr>
+                                    {{ range .}}
+                                    <tr>
+                                        <td>{{ .KodePelajaran}}</td>
+                                        <td>{{ .NamaPelajaran}}</td>
+                                        <td>{{ .Nilai}}</td>
+                                        <td>
+                                            <form action="/nilai/update/data-by">
+                                                <input type="hidden" name="kode" value="{{.KodeNilai}}">
+                                                <input type="submit" id="update" value="Update"  onclick="window.location.href='/nilai/update/data-by'">
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form action="/nilai/deletebykode">
+                                                <script type="text/javascript" language="javascript">
+                                                    function konfirmasi(){
+                                                        tanya = confirm("Anda yakin akan menghapus data?");
+                                                        if (tanya == true) return true;
+                                                        else return false;
+                                                    }
+                                                </script>
+                                                <input type="hidden" name="nis" value="{{.Nis}}">
+                                                <input type="hidden" id="id"  name="kode" value="{{ .KodeNilai}}">
+                                                <input type="submit" id="hapus" value="Delete" href="/nilai/deletebykode" onclick="return konfirmasi()">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    {{ end }}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer">
+                <p>Copyright &copy; 2018</p>
+                <p>Designed By Ahmad Qomaruddin</p>    
+            </div>
+        </div>
+    </body>    
+</html>

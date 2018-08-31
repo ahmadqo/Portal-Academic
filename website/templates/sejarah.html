@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/website/css/style.css"/>        
+        <title>Selamat Datang Di Portal Al-Munawwir</title>
+        <link rel="icon" type="image/png" href="/website/img/logo.jpg">
+        <link rel="stylesheet" type="text/css" href="/website/css/style-login.css"/>
+    </head>
+    <body>
+        <div class="header">
+            <img src="/website/img/logo.jpg" class="logo" alt="Logo PP Al-Munawwir">
+            <a href="/">Home</a>
+            <a href="/sejarah">Profil</a>
+            <a onclick="document.getElementById('id02').style.display='block'">Daftar</a>
+            <a onclick="document.getElementById('id01').style.display='block'">Log In</a>
+        </div>
+        <div class="row">
+            <div class="row-atas">
+                <div class="col-12">
+                    <div class="content">
+                        <div class="home">
+                            <h2>Sejarah</h2>
+                            <p class="paragrap-1">
+                                Pondok Pesantren Al Munawwir didirikan oleh KH. Muhammad Munawwir bin Abdullah Rosyad pada tanggal 15 November 1911 M, 
+                                sejak awal berdiri dan berkembangnya pondok pesantren ini semula bernama pondok pesantren Krapyak, 
+                                karena memang terletak di dusun Krapyak. Dan pada tahun 1976-an nama pondok pesantren tersebut ditambah ‘Al-Munawwir’. 
+                                Penambahan nama ini bertujuan untuk mengenang pendirinya yaitu KH. M. Munawwir. Dan Al-Qur’anlah sebagai ciri khas pendidikan 
+                                di pesantren ini di awal berdirinya.
+                            </p>
+                            <div class="content-img-home">
+                                <a target="_blank" href="/website/img/depan.jpg">
+                                    <img src="/website/img/depan.jpg" alt="Riyadhoh Mbah M.Munawwir" class="tokoh">
+                                </a>
+                                <div class="describtion-home">
+                                        Gerbang lama Pesantren Al-Munawwir Krapyak Yogyakarta   
+                                </div>
+                            </div>
+                            <p class="paragrap-1">
+                                Pondok pesantren Al-Munawwir adalah salah satu lembaga pendidikan yang dalam khazanah ilmu dunia pesantren dikenal 
+                                dengan istilah salaf yang hingga saat ini mampu bertahan dan bahkan terus berkembang dalam kiprahnya membangun 
+                                bangsa dan negara Indonesia. Kemudian pada perkembangan selanjutnya pondok pesantren Al-Munawwir tidak hanya mengkhususkan 
+                                pendidikannya dalam bidang Al-Qur’an saja, melainkan merambat ke bidang ilmu yang lain, khususnya kitab-kitab kuning (
+                                kutubussalafu assholih) yang kemudian disusul dengan penerapan sistem madrasah (klasikal) yang melahirkan lembaga-lembaga pendidikan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer">
+                <p>Copyright &copy; 2018</p>
+                <p>Designed By Ahmad Qomaruddin</p>  
+            </div>
+        </div>
+        <!-- =====================================LOGIN=================================== -->
+        <div id="id01" class="modal">
+            <form class="modal-content animate" action="/login" method="POST">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <h2>LOGIN</h2>
+                </div>
+                <div class="container">
+                    <label for="username"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="username" required>
+    
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+                        
+                    <button type="submit">Login</button>
+                </div>
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <script>
+            var modal = document.getElementById('id01');
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        <!-- =============================================================================== -->
+        <!-- =====================================DAFTAR=================================== -->
+        <div id="id02" class="modal">
+            <form class="modal-content animate" action="/signup" method="POST">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <h2>DAFTAR AKUN</h2>
+                </div>
+                <div class="container">
+                    <label for="username"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="username" required>
+
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+                    <label for="ulangpassword"><b>Ulangi Password</b></label>
+                    <input type="password" name="ulangpassword" placeholder="Confirm Password" id="confirm_password" required>
+                        
+                    <button type="submit">Daftar</button>
+                </div>
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <script>
+            var modal = document.getElementById('id02');
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+            var password = document.getElementById("password")
+            , confirm_password = document.getElementById("confirm_password");
+
+            function validatePassword(){
+                if(password.value != confirm_password.value) {
+                    confirm_password.setCustomValidity("Passwords Don't Match");
+                } else {
+                    confirm_password.setCustomValidity('');
+                }
+            }
+            password.onchange = validatePassword;
+            confirm_password.onkeyup = validatePassword;
+        </script>
+        <!-- =============================================================================== -->
+    </body>    
+</html>
